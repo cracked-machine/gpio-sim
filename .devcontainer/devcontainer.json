@@ -1,0 +1,27 @@
+// IMPORTANT: You MUST run 'modprobe gpio-sim' on the HOST first!
+
+{
+    "build": { "dockerfile": "Dockerfile" },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "llvm-vs-code-extensions.vscode-clangd",
+                "ms-vscode.cpptools",
+                "twxs.cmake",
+                "xaver.clang-format",
+                "cschlosser.doxdocgen",
+                "matepek.vscode-catch2-test-adapter",
+                "tomoki1207.pdf"
+            ]
+        }
+        
+    },
+    "remoteUser": "user",
+    "containerUser": "user",
+    "mounts": [
+        // "type=bind,source=/dev/bus/usb,target=/dev/bus/usb",
+        "type=bind,source=/sys,target=/sys",
+        "type=bind,source=/dev,target=/dev"
+    ],
+    "runArgs": ["--privileged", "-P", "--cap-add=SYS_ADMIN"] 
+}
