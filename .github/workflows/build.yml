@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - name: modprobe
-      run: lsmod
+      run: apt update -y && apt install -y linux-image-generic && lsmod
     - name: Check out code
       uses: actions/checkout@v4
     - name: Build docker images
