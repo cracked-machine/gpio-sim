@@ -11,5 +11,7 @@ jobs:
     - name: Run tests
       run: |
         docker run -v $GITHUB_WORKSPACE:/workdir -w/workdir \
+        --mount type=bind,source=/sys,target=/sys \
+        --mount type=bind,source=/dev,target=/dev \
         --privileged -P --cap-add=SYS_ADMIN \
         local ls -la
