@@ -4,7 +4,7 @@
 
 ```
 sudo ./setup.sh
-source do_cmake.sh && clean && build
+./build.sh
 build/gpio_sim_example
 sudo ./teardown.sh
 ```
