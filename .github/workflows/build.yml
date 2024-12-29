@@ -9,4 +9,4 @@ jobs:
     - name: Build docker images
       run: docker build -t local -f .devcontainer/Dockerfile .
     - name: Run tests
-      run: docker run -it --privileged -P --cap-add=SYS_ADMIN local ./build.sh
+      run: docker run --privileged -P --cap-add=SYS_ADMIN local ./build.sh
