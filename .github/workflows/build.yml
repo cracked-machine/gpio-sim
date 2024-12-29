@@ -14,4 +14,4 @@ jobs:
         --mount type=bind,source=/sys,target=/sys \
         --mount type=bind,source=/dev,target=/dev \
         --privileged -P --cap-add=SYS_ADMIN \
-        local ./setup
+        local ./setup.sh
