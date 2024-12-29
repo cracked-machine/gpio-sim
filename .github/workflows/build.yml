@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check out code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Build docker images
       run: docker build -t local -f .devcontainer/Dockerfile .
     - name: Run tests
-      run: docker run --privileged -P --cap-add=SYS_ADMIN local env
+      run: docker run -v $GITHUB_WORKSPACE:/workdir -w/workdir --privileged -P --cap-add=SYS_ADMIN local ls -la
