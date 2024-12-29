@@ -10,6 +10,7 @@ jobs:
       run: docker build -t local -f .devcontainer/Dockerfile .
     - name: Run tests
       run: |
+        modprobe gpio-sim &&
         docker run -v $GITHUB_WORKSPACE:/workdir -w/workdir \
         --mount type=bind,source=/sys,target=/sys \
         --mount type=bind,source=/dev,target=/dev \
